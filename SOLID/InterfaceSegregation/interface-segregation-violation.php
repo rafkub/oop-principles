@@ -19,7 +19,8 @@ class EngineCar implements Car
         echo 'Changing brake pads...' . PHP_EOL;
     }
 
-    public function changeOil(): void {
+    public function changeOil(): void
+    {
         echo 'Changing oil...' . PHP_EOL;
     }
 }
@@ -34,7 +35,7 @@ class ElectricCar implements Car
     // ElectricCar class should not need to implement the changeOil() method
     public function changeOil(): void // future change to method's signature in the Car interface requires a change here
     {
-        throw new RuntimeException('Impossible action!'); // might also do nothing
+        throw new RuntimeException(message: 'Impossible action!'); // might also do nothing
     }
 }
 

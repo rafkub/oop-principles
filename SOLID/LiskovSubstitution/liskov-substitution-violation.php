@@ -12,7 +12,7 @@ abstract class Bird
 
     public function fly(): void
     {
-        echo 'A bird can fly.' . PHP_EOL;
+        echo 'It can fly.' . PHP_EOL;
     }
 }
 
@@ -69,10 +69,10 @@ $duck = new Duck();
 $ostrich = new Ostrich();
 $hummingbird = new Hummingbird();
 
-$birdWatcher->watchFlying($duck);
-// $birdWatcher->watchFlying($ostrich); // a bird is not replaceable by an ostrich; throws a runtime exception
-$birdWatcher->watchFlying($hummingbird);
+$birdWatcher->watchFlying(bird: $duck);
+// $birdWatcher->watchFlying(bird: $ostrich); // a bird is not replaceable by an ostrich; throws a runtime exception
+$birdWatcher->watchFlying(bird: $hummingbird);
 
-$birdWatcher->listen($duck);
-$birdWatcher->listen($ostrich);
-// $birdWatcher->listen($hummingbird); // a bird is not replaceable by a hummingbird; throws a runtime exception
+$birdWatcher->listen(bird: $duck);
+$birdWatcher->listen(bird: $ostrich);
+// $birdWatcher->listen(bird: $hummingbird); // a bird is not replaceable by a hummingbird; throws a runtime exception

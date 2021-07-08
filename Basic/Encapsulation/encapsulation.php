@@ -11,7 +11,7 @@ class Dog
 
     public function setWeight(int $weight): void
     {
-        if ($weight > 0) { // possibility to set rules
+        if ($weight > 0) { // possibility to set rules; could also throw an exception for invalid data
             $this->weight = $weight;
         }
     }
@@ -28,7 +28,7 @@ class Dog
 
     public function __toString(): string
     {
-        return "Dog's weight is $this->weight and it's in a $this->mood mood.";
+        return "Dog's weight is $this->weight unit(s) and it's in a $this->mood mood.";
     }
 }
 
@@ -42,14 +42,13 @@ $dog->pet();
 echo "After petting: $dog" . PHP_EOL;
 
 $newWeight = -1;
-$dog->setWeight($newWeight);
+$dog->setWeight(weight: $newWeight);
+echo "After setting weight to $newWeight unit(s): $dog" . PHP_EOL;
 
-echo "After setting weight to $newWeight: $dog" . PHP_EOL;
 $newWeight = 5;
-
-$dog->setWeight($newWeight);
-echo "After setting weight to $newWeight: $dog" . PHP_EOL;
+$dog->setWeight(weight: $newWeight);
+echo "After setting weight to $newWeight unit(s): $dog" . PHP_EOL;
 
 // Direct internal state modification is NOT possible, preventing from setting incorrect internal state:
-// $dog->weight = -1; //cannot access private property
-// $dog->mood = 'cold'; //cannot access private property
+// $dog->weight = -1; // cannot access private property
+// $dog->mood = 'cold'; // cannot access private property

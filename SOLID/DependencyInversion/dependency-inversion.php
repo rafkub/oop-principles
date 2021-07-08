@@ -6,13 +6,9 @@ namespace OOP\Principles\SOLID\DependencyInversion;
 
 class Car
 {
-    // Car class is decoupled from CombustionEngine and ElectricEngine - it has no direct reference to them
-    private Engine $engine; // a car relies on abstraction (ie. interface)
-
-    public function __construct(Engine $engine)
-    {
-        $this->engine = $engine; // no hard-coded dependency - an engine is produced externally
-    }
+    // Car class is decoupled from CombustionEngine and ElectricEngine - it has no direct reference to them.
+    // It relies on abstraction (ie. Engine interface).
+    public function __construct(private Engine $engine) {} // no hard-coded dependency: an engine is produced externally
 
     public function start(): void
     {
@@ -25,7 +21,7 @@ interface Engine // abstraction does not depend on concretions
     function turnOn(): void;
 }
 
-class CombustionEngine implements Engine // a combustion engine relies on abstraction (ie. interface)
+class CombustionEngine implements Engine // a combustion engine relies on abstraction (ie. Engine interface)
 {
     function turnOn(): void
     {
@@ -33,7 +29,7 @@ class CombustionEngine implements Engine // a combustion engine relies on abstra
     }
 }
 
-class ElectricEngine implements Engine // an electric engine relies on abstraction (ie. interface)
+class ElectricEngine implements Engine // an electric engine relies on abstraction (ie. Engine interface)
 {
     function turnOn(): void
     {
@@ -43,12 +39,12 @@ class ElectricEngine implements Engine // an electric engine relies on abstracti
 
 // A car can be assembled with a combustion engine:
 $combustionEngine = new CombustionEngine();
-$car = new Car($combustionEngine); // car's dependency (combustion engine) is injected via a constructor parameter
+$car = new Car(engine: $combustionEngine); // car's dependency is injected via a constructor parameter
 $car->start();
 
 // A car can be assembled with an electric engine as well:
 $electricEngine = new ElectricEngine();
-$car = new Car($electricEngine); // car's dependency (electric engine) is injected via a constructor parameter
+$car = new Car(engine: $electricEngine); // car's dependency is injected via a constructor parameter
 $car->start();
 
 // any future engines - like HydrogenCombustionEngine - may be easily injected if they implement Engine interface

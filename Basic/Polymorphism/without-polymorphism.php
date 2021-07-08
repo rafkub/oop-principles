@@ -6,14 +6,7 @@ namespace OOP\Principles\Basic\WithoutPolymorphism;
 
 class Rectangle
 {
-    private float $a;
-    private float $b;
-
-    public function __construct(float $a, float $b)
-    {
-        $this->b = $b;
-        $this->a = $a;
-    }
+    public function __construct(private float $a, private float $b) {}
 
     function getSurface(): float
     {
@@ -23,14 +16,7 @@ class Rectangle
 
 class Triangle
 {
-    private float $a;
-    private float $h;
-
-    public function __construct(float $a, float $h)
-    {
-        $this->h = $h;
-        $this->a = $a;
-    }
+    public function __construct(private float $a, private float $h) {}
 
     function getSurface(): float
     {
@@ -54,9 +40,9 @@ class Printer
 $printer = new Printer();
 
 echo 'Rectangle:' . PHP_EOL;
-$rectangle = new Rectangle(3, 4);
-$printer->displayRectangleSurface($rectangle);
+$rectangle = new Rectangle(a: 3, b: 4);
+$printer->displayRectangleSurface(rectangle: $rectangle);
 
 echo 'Triangle:' . PHP_EOL;
-$triangle = new Triangle(3, 4);
-$printer->displayTriangleSurface($triangle);
+$triangle = new Triangle(a: 3, h: 4);
+$printer->displayTriangleSurface(triangle: $triangle);

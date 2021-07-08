@@ -33,9 +33,9 @@ class Ostrich implements Audible // requires only implementation of a method tha
     }
 }
 
-class Hummingbird extends Flyable  // requires only implementation of a method that makes sense
+class Hummingbird extends Flyable // requires only implementation of a method that makes sense
 {
-    public function fly(): void
+    public function fly(): void // in this particular case the method has been reimplemented
     {
         echo 'A hummingbird can fly in all directions, including backwards and upside down!' . PHP_EOL;
     }
@@ -60,10 +60,12 @@ $duck = new Duck();
 $ostrich = new Ostrich();
 $hummingbird = new Hummingbird();
 
-$birdWatcher->watchFlying($duck);
-// $birdWatcher->watchFlying($ostrich); // static analysis: Expected parameter of type 'Flyable', 'Ostrich' provided
-$birdWatcher->watchFlying($hummingbird);
+$birdWatcher->watchFlying(bird: $duck);
+// Static analysis - "Expected parameter of type 'Flyable', 'Ostrich' provided":
+// $birdWatcher->watchFlying(bird: $ostrich);
+$birdWatcher->watchFlying(bird: $hummingbird);
 
-$birdWatcher->listen($duck);
-$birdWatcher->listen($ostrich);
-// $birdWatcher->listen($hummingbird); // static analysis: Expected parameter of type 'Audible', 'Hummingbird' provided
+$birdWatcher->listen(bird: $duck);
+$birdWatcher->listen(bird: $ostrich);
+// Static analysis - "Expected parameter of type 'Audible', 'Hummingbird' provided":
+// $birdWatcher->listen(bird: $hummingbird);

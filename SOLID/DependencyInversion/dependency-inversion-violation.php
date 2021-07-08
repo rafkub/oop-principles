@@ -6,12 +6,8 @@ namespace OOP\Principles\SOLID\DependencyInversionViolation;
 
 class Car
 {
-    private CombustionEngine $engine; // a car relies on concretion (ie. a concrete class)
-
-    public function __construct(CombustionEngine $engine)
-    {
-        $this->engine = $engine;
-    }
+    // a car relies on concretion (ie. a concrete class)
+    public function __construct(private CombustionEngine $engine) {}
 
     public function start(): void
     {
@@ -35,8 +31,9 @@ class ElectricEngine
     }
 }
 
+// A car can be assembled only with a combustion engine and not with an electric one:
 $combustionEngine = new CombustionEngine();
-$car = new Car($combustionEngine); // a car can be assembled only with a combustion engine and not with an electric one
+$car = new Car(engine: $combustionEngine);
 $car->start();
 
 // NOTE:

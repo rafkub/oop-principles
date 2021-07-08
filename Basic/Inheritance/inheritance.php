@@ -7,12 +7,7 @@ namespace OOP\Principles\Basic\Inheritance;
 // a class which is inherited from is called base, super or parent class
 class Person // might be defined abstract if its instantiation is forbidden
 {
-    private string $name;
-
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
+    public function __construct(private string $name) {}
 
     public function introduceYourself(): string
     {
@@ -23,12 +18,9 @@ class Person // might be defined abstract if its instantiation is forbidden
 // a class which inherits from another one is called a subclass, derived class or a child class
 class Student extends Person // a student inherits person's features
 {
-    private int $grade;
-
-    public function __construct(string $name, int $grade)
+    public function __construct(string $name, private int $grade)
     {
-        parent::__construct($name);
-        $this->grade = $grade;
+        parent::__construct(name: $name);
     }
 
     public function introduceYourself(): string
@@ -37,14 +29,11 @@ class Student extends Person // a student inherits person's features
     }
 }
 
-class Teacher extends Person  // a teacher also inherits person's features
+class Teacher extends Person // a teacher also inherits person's features
 {
-    private string $subject;
-
-    public function __construct(string $name, string $subject)
+    public function __construct(string $name, private string $subject)
     {
-        parent::__construct($name);
-        $this->subject = $subject;
+        parent::__construct(name: $name);
     }
 
     public function introduceYourself(): string
@@ -55,9 +44,9 @@ class Teacher extends Person  // a teacher also inherits person's features
 
 // Usage is identical as in without-inheritance.php:
 echo 'Student:' . PHP_EOL;
-$student = new Student('Tom', 5);
+$student = new Student(name: 'Tom', grade: 5);
 echo $student->introduceYourself() . PHP_EOL;
 
 echo 'Teacher:' . PHP_EOL;
-$teacher = new Teacher('Eva', 'science');
+$teacher = new Teacher(name: 'Eva', subject: 'science');
 echo $teacher->introduceYourself() . PHP_EOL;
