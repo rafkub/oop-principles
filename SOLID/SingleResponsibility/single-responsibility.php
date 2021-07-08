@@ -28,5 +28,5 @@ class Printer // a separate class is responsible for a report formatting
 }
 
 $report = new Report('Sales');
-$printer = new Printer;
+$printer = new Printer();
 echo $printer->toPdf($report) . PHP_EOL;

@@ -6,8 +6,8 @@ namespace OOP\Principles\SOLID\OpenClosedViolation;
 
 use RuntimeException;
 
-// to extend functionality by adding support for .org extension it is required to modify the Domain class
-// the class is being opened for modification, thus violating the Open-Closed principle
+// To extend functionality by adding support for .org extension it is required to modify the Domain class.
+// This way the class is being opened for modification, thus violating the Open-Closed principle.
 final class Domain
 {
     public const COM = '.com';

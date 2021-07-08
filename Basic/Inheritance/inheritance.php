@@ -37,7 +37,7 @@ class Student extends Person // a student inherits person's features
     }
 }
 
-class Teacher extends Person  // a teacher also inherits person's features
+class Teacher extends Person // a teacher also inherits person's features
 {
     private string $subject;
 

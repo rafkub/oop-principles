@@ -19,7 +19,8 @@ class EngineCar implements Car
         echo 'Changing brake pads...' . PHP_EOL;
     }
 
-    public function changeOil(): void {
+    public function changeOil(): void
+    {
         echo 'Changing oil...' . PHP_EOL;
     }
 }

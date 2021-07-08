@@ -17,8 +17,8 @@ class Rectangle implements Figure
 
     public function __construct(float $a, float $b)
     {
-        $this->b = $b;
         $this->a = $a;
+        $this->b = $b;
     }
 
     function getSurface(): float
@@ -34,8 +34,8 @@ class Triangle implements Figure
 
     public function __construct(float $a, float $h)
     {
-        $this->h = $h;
         $this->a = $a;
+        $this->h = $h;
     }
 
     function getSurface(): float

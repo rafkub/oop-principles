@@ -12,7 +12,7 @@ abstract class Bird
 
     public function fly(): void
     {
-        echo 'A bird can fly.' . PHP_EOL;
+        echo 'It can fly.' . PHP_EOL;
     }
 }
 

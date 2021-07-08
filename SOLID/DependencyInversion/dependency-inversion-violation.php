@@ -35,8 +35,9 @@ class ElectricEngine
     }
 }
 
+// A car can be assembled only with a combustion engine and not with an electric one:
 $combustionEngine = new CombustionEngine();
-$car = new Car($combustionEngine); // a car can be assembled only with a combustion engine and not with an electric one
+$car = new Car($combustionEngine);
 $car->start();
 
 // NOTE:
