@@ -6,14 +6,7 @@ namespace OOP\Principles\Basic\WithoutInheritance;
 
 class Student
 {
-    private string $name;
-    private int $grade;
-
-    public function __construct(string $name, int $grade)
-    {
-        $this->name = $name;
-        $this->grade = $grade;
-    }
+    public function __construct(private string $name, private int $grade) {}
 
     public function introduceYourself(): string
     {
@@ -23,14 +16,7 @@ class Student
 
 class Teacher
 {
-    private string $name; // code duplication
-    private string $subject;
-
-    public function __construct(string $name, string $subject)
-    {
-        $this->name = $name;
-        $this->subject = $subject;
-    }
+    public function __construct(private string $name, private string $subject) {} // name property duplication
 
     public function introduceYourself(): string
     {
@@ -39,9 +25,9 @@ class Teacher
 }
 
 echo 'Student:' . PHP_EOL;
-$student = new Student('Tom', 5);
+$student = new Student(name: 'Tom', grade: 5);
 echo $student->introduceYourself() . PHP_EOL;
 
 echo 'Teacher:' . PHP_EOL;
-$teacher = new Teacher('Eva', 'science');
+$teacher = new Teacher(name: 'Eva', subject: 'science');
 echo $teacher->introduceYourself() . PHP_EOL;

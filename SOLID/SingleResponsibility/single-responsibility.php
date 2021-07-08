@@ -6,12 +6,7 @@ namespace OOP\Principles\SOLID\SingleResponsibility;
 
 class Report // the class is responsible only for managing the content of a report
 {
-    private string $name;
-
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
+    public function __construct(private string $name) {}
 
     public function getName(): string
     {
@@ -27,6 +22,6 @@ class Printer // a separate class is responsible for a report formatting
     }
 }
 
-$report = new Report('Sales');
-$printer = new Printer;
-echo $printer->toPdf($report) . PHP_EOL;
+$report = new Report(name: 'Sales');
+$printer = new Printer();
+echo $printer->toPdf(report: $report) . PHP_EOL;

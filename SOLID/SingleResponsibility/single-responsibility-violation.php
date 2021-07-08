@@ -9,12 +9,7 @@ namespace OOP\Principles\SOLID\SingleResponsibilityViolation;
 // 2. the format of the report could change
 class Report
 {
-    private string $name;
-
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
+    public function __construct(private string $name) {}
 
     public function toPdf(): string
     {
@@ -22,5 +17,5 @@ class Report
     }
 }
 
-$report = new Report('Sales');
+$report = new Report(name: 'Sales');
 echo $report->toPdf() . PHP_EOL;
