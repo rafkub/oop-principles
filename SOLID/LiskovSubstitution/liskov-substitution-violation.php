@@ -33,7 +33,8 @@ class Ostrich extends Bird // requires reimplementation of fly() method
 
     public function fly(): void // implementing this method for an ostrich does not make sense
     {
-        throw new RuntimeException('Sorry, an ostrich cannot fly...');
+        // problem: the child is not extending the functionality of the parent but instead restricting it
+        throw new RuntimeException(message: 'Sorry, an ostrich cannot fly...');
     }
 }
 
@@ -41,7 +42,8 @@ class Hummingbird extends Bird // requires implementation of makeSound() method
 {
     public function makeSound(): void  // implementing this method for a hummingbird does not make sense
     {
-        throw new RuntimeException('Sorry, a hummingbird cannot make a sound...');
+        // problem: the child is not extending the functionality of the parent but instead restricting it
+        throw new RuntimeException(message: 'Sorry, a hummingbird cannot make a sound...');
     }
 
     public function fly(): void

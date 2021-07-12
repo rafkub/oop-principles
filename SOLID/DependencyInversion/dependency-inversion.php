@@ -7,7 +7,7 @@ namespace OOP\Principles\SOLID\DependencyInversion;
 class Car
 {
     // Car class is decoupled from CombustionEngine and ElectricEngine - it has no direct reference to them.
-    // It relies on abstraction (ie. Engine interface).
+    // It relies on abstraction (i.e. Engine interface).
     public function __construct(private Engine $engine) {} // no hard-coded dependency: an engine is produced externally
 
     public function start(): void
@@ -21,7 +21,7 @@ interface Engine // abstraction does not depend on concretions
     function turnOn(): void;
 }
 
-class CombustionEngine implements Engine // a combustion engine relies on abstraction (ie. Engine interface)
+class CombustionEngine implements Engine // a combustion engine relies on abstraction (i.e. Engine interface)
 {
     function turnOn(): void
     {
@@ -29,7 +29,7 @@ class CombustionEngine implements Engine // a combustion engine relies on abstra
     }
 }
 
-class ElectricEngine implements Engine // an electric engine relies on abstraction (ie. Engine interface)
+class ElectricEngine implements Engine // an electric engine relies on abstraction (i.e. Engine interface)
 {
     function turnOn(): void
     {

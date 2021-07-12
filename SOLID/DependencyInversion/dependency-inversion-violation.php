@@ -6,7 +6,7 @@ namespace OOP\Principles\SOLID\DependencyInversionViolation;
 
 class Car
 {
-    // a car relies on concretion (ie. a concrete class)
+    // a car relies on concretion (i.e. a concrete class)
     public function __construct(private CombustionEngine $engine) {}
 
     public function start(): void
