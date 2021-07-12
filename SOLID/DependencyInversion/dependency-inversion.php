@@ -25,7 +25,7 @@ interface Engine // abstraction does not depend on concretions
     function turnOn(): void;
 }
 
-class CombustionEngine implements Engine // a combustion engine relies on abstraction (ie. Engine interface)
+class CombustionEngine implements Engine // a combustion engine relies on abstraction (i.e. Engine interface)
 {
     function turnOn(): void
     {
@@ -33,7 +33,7 @@ class CombustionEngine implements Engine // a combustion engine relies on abstra
     }
 }
 
-class ElectricEngine implements Engine // an electric engine relies on abstraction (ie. Engine interface)
+class ElectricEngine implements Engine // an electric engine relies on abstraction (i.e. Engine interface)
 {
     function turnOn(): void
     {
