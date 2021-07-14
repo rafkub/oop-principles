@@ -5,7 +5,7 @@ Principles governing object-oriented programming (OOP)
 
 Principles provide high level guidelines to design better software applications.
 OOP principles should be applied while designing application classes to achieve easier code maintainability, 
-extensibility, greater flexibility and resilience to change. (modularity?)
+extensibility, greater flexibility and resilience to change.
 
 ## NOTE:
 
