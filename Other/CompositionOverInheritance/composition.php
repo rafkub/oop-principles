@@ -40,7 +40,6 @@ class Window // Window does not extend Rectangular nor Circular class
     }
 }
 
-// Technically, an aggregation is used here and not composition:
 $rectangle = new Rectangle(width: 4.3, height: 2.1);
 $window = new Window(shape: $rectangle); // dynamic composition is possible; window's shape is decided at runtime
 echo "Rectangular window's area: " . $window->getArea() . PHP_EOL;
