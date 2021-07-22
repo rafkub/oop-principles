@@ -1,5 +1,5 @@
 # Program to interface, not to implementation
-* manipulating objects solely in terms of the interface defined by abstract classes or interfaces
+* manipulate objects solely in terms of the interface defined by abstract classes or interfaces
 
 ## Benefits
 * clients remain unaware of the specific types of objects they use

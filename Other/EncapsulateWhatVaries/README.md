@@ -1,10 +1,13 @@
 # Encapsulate What Varies
-* what stays the same is isolated from what changes (or might change) often
+* identify the aspects of an application that vary and separate them from what stays the same
+  * what stays the same is isolated from what changes (or might change) often
+  * lets one part of the system vary independently of another part
+  * allows to change the isolated part of the system without redesign
+    
+## Benefits
 * helps to handle frequently changing details
-* lets one part of the system vary independently of another part
-* allows to change the isolated part of the system without redesign
 
-## NOTE
+## NOTE:
 Encapsulating the concept that varies is a theme of many design patterns.
 
 Examples:

@@ -1,4 +1,4 @@
-# The Principle of Least Knowledge (also known as the Law of Demeter)
+# The Principle of Least Knowledge
 * talk only to your immediate friends
 * reduce the interactions between objects
 
@@ -15,3 +15,6 @@ Only invoke methods that belong to:
 Do not invoke methods that belong to:
 * objects that were returned from calling other methods
 * anything else
+
+## NOTE:
+This principle is also known as the Law of Demeter.

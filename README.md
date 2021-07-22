@@ -1,11 +1,11 @@
-# oop-principles
-Principles governing object-oriented programming (OOP)
+# Object-oriented programming (OOP) principles
+Principles governing object-oriented programming (four pillars, SOLID and other)
 
 ---
 
 Principles provide high level guidelines to design better software applications.
-OOP principles should be applied while designing application classes to achieve easier code maintainability, 
-extensibility, greater flexibility and resilience to change.
+OOP principles should be applied while designing application classes to achieve modularity, 
+easier code maintainability, extensibility, greater flexibility and resilience to change.
 
 ## NOTE:
 
